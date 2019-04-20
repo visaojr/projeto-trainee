@@ -99,7 +99,7 @@ class Task{
         }
     }
     public function index(){
-        $stmt = $this->conn->prepare("SELECT * FROM `task` WHERE 1 ORDER BY `name`");
+        $stmt = $this->conn->prepare("SELECT * FROM `task` WHERE 1");
         $stmt->execute();
         return $stmt;
     }
