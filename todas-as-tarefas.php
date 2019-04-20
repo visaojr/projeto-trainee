@@ -32,7 +32,7 @@ require_once 'header.php';
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-						<button type="button" class="btn btn-primary">Salvar</button>
+						<button type="button" class="btn botao-sistema">Salvar</button>
 					</div>
 				</div>
 			</div>

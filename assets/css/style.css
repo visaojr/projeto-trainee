@@ -42,6 +42,15 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Galano Grotesque", helvetica, arial, sans-serif;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 21px;
+}
 a, button {
     font-family:"Nurom", helvetica, arial, sans-serif;
     font-weight: 400;
@@ -62,9 +71,20 @@ button:active {
       background: #2E4A80;
 }
 
-section {
-    padding: 0 5rem;
+section.tasks {
+    max-width: 80%;
+    margin: 0 auto;
 }
+
+/*----------------------- Ocultando o menu de sanduiche em telas grandes ----------------------------*/
+
+@media only screen and (min-width : 768px) {
+   .navbar {
+        display: none!important;
+    }
+}
+
+
 
 #sidebar-wrapper {
  font-family: "Galano Grotesque", helvetica, arial, sans-serif;
@@ -218,7 +238,7 @@ background: rgba(181, 181, 181, 0.05);
     height: 3px;
     margin: 0 auto;
     border-radius: 50%;
-    background-color: rgba(115, 134, 213, 0.7);
+    background-color: #9fa6b8;
     box-shadow: 0 5px 10px rgba(115, 134, 213, 0.4);
 }
 
@@ -241,13 +261,15 @@ box-shadow: 0 7px 15px rgba(85, 138, 238, 0.3);
 
 .botao-sistema  {
 margin: 20px 0;
+padding: 10px 30px;
 }
 .botao-sidebar  {
 width: 70%;
 margin: 10px 0;
+padding: 10px 30px;
 }
 
-.botao-sidebar:hover, .botao-sidebar:focus {
+.botao-sidebar:hover, .botao-sidebar:focus, .botao-sistema:hover, .botao-sistema:focus {
 opacity: 0.9;
 box-shadow: 0 7px 15px rgba(85, 138, 238, 0.5)
 }
@@ -278,9 +300,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa0e8', end
     border-top: none;
 }
 
+/*----------------------- Meu calendário ----------------------------*/
+#calendar {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 /*----------------------- Novos botões de editar e excluir ----------------------------*/
  .editar-botao {
-     border: 1px solid #ccc;
      padding: 6px 1px;
      background: #fff;
      width: calc(50% - 4px);
@@ -288,10 +315,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa0e8', end
      -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
 }
- .editar-botao:hover {
-     border: 1px solid #ccc;
-     background: #f8f8f8;
-     width: calc(50% - 4px);
+.editar-botao:hover {
+    background: #578bed;
+    color: white;
+    width: calc(50% - 4px);
 }
 a.excluir-botao {
     border: 1px solid #568bee;
