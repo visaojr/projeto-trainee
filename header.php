@@ -62,7 +62,7 @@ $tarefa = new Task();
 					<a href="todas-as-tarefas.php"><i class="fas fa-tasks mr-4"></i>Todas as tarefas</a>
 				</li>
 				<li>
-					<a href="tarefas-por-materia.php"><i class="fas fa-filter mr-4"></i>Tarefas BASE</a>
+					<a href="tarefas-por-materia.php"><i class="fas fa-filter mr-4"></i>TAREFAS (PROVISÓRIO)</a>
 				</li>
 				<!-- Ítem do menu que usa PHP para buscar as materias do banco de dados e popular as opções -->
 
