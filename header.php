@@ -65,8 +65,9 @@ $tarefa = new Task();
 					<a href="tarefas-por-materia.php"><i class="fas fa-filter mr-4"></i>Tarefas BASE</a>
 				</li>
 				<!-- Ítem do menu que usa PHP para buscar as materias do banco de dados e popular as opções -->
+
 				<li class="active">
-					<a href="tarefas-por-materia.php" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-filter mr-4"></i></i>Tarefas por matéria</a>
+					<a href="#materias_submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-filter mr-4"></i></i>Tarefas por matéria</a>
 					<ul class="list-unstyled collapse" id="materias_submenu">
 						<?php
 						$stmtMateria = $materia->index();
