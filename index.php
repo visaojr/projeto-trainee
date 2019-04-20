@@ -8,9 +8,9 @@ require_once 'header.php';
 
 		<h2 class="float-left">Meu Calendário</h2>
 		
+	</div>
 
-
-
+	<div id='calendar'></div>
 		
 
 
