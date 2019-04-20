@@ -1,4 +1,14 @@
+<?php
 
+use VisaoJR\Treinee\model\Task;
+require_once 'model/Task.php';
+
+
+/*require_once '../autoloader.php';*/
+
+$tarefa = new Task();
+
+?>
 <!DOCTYPE HTML>
 
 <html lang="pt-br">
@@ -91,33 +101,22 @@
 							</tr>
 						</thead>
 						<tbody class="table-striped">
+							<?php
+						        $stmtTarefa = $tarefa->index();
+						        while ($row = $stmtTarefa->fetch(PDO::FETCH_OBJ)) {   
+						            ?>
 							<tr>
-								<td>Prova de OAC</td>
-								<td>30</td>
-								<td>09/05</td>
+								<td><?php echo $row->name; ?></td>
+								<td><?php echo $row->nota; ?></td>
+								<td><?php echo $row->date; ?></td>
 								<td>
 									<a class="btn editar-botao" href="#" data-toggle="modal" data-target="#editEscola<?php echo $row->id ?>">Editar</a>
 									<a title="Excluir" class="btn excluir-botao" href="#" data-toggle="modal" data-target="#delete-modal"><i class="fas fa-trash"></i></a>
 								</td>
 							</tr>
-							<tr>
-								<td>Prova de Cálculo 3</td>
-								<td>25</td>
-								<td>09/02</td>
-								<td>
-									<a class="btn editar-botao" href="#" data-toggle="modal" data-target="#editEscola">Editar</a>
-									<a title="Excluir" class="btn excluir-botao" href="#" data-toggle="modal" data-target="#delete-modal"><i class="fas fa-trash"></i></a>
-								</td>
-							</tr>
-							<tr>
-								<td>Prova de Física 2</td>
-								<td>35</td>
-								<td>02/05</td>
-								<td>
-									<a class="btn editar-botao" href="#" data-toggle="modal" data-target="#editEscola">Editar</a>
-									<a title="Excluir" class="btn excluir-botao" href="#" data-toggle="modal" data-target="#delete-modal"><i class="fas fa-trash"></i></a>
-								</td>
-							</tr>
+								<?php
+									}
+								?>
 						</tbody>
 					</table>
 
