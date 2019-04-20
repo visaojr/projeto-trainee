@@ -32,8 +32,6 @@ body {
     min-height: 100vh;
   position: relative;
   margin: 0;
-
-
   background-color: #f7f8fe;
   overflow-x: hidden;
     font-family:"Nurom", helvetica, arial, sans-serif;
@@ -62,6 +60,10 @@ a:active {
 }
 button:active {
       background: #2E4A80;
+}
+
+section {
+    padding: 0 5rem;
 }
 
 #sidebar-wrapper {
