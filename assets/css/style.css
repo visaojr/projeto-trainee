@@ -20,6 +20,7 @@
 }
 
 body {
+  background-color: #f7f8fe;
   overflow-x: hidden;
     font-family:"Nurom", helvetica, arial, sans-serif;
     font-weight: 400;
@@ -30,6 +31,8 @@ body {
 }
 
 a {
+      font-family:"Nurom", helvetica, arial, sans-serif;
+    font-weight: 400;
   color: #8072bd;
 }
 
@@ -87,7 +90,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5ebfc', end
   }
 
   #wrapper.toggled #sidebar-wrapper {
-    margin-left: -15rem;
+    margin-left: -20rem;
   }
 }
 
@@ -120,9 +123,73 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5ebfc', end
 
 
 
-.menu-itens {
-  
+.list-group {
+  text-transform: uppercase;
+    padding: 20px 0;
 }
+
+.list-group li a {
+  position: relative;
+  color: #9fa6b8;
+   padding: 20px 30px;
+    font-size: 15px;
+    display: block;
+    font-weight: 700;
+    letter-spacing: .05em;
+    border-left: 5px solid transparent;
+}
+
+.list-group li a:hover {
+  text-decoration: none;
+
+}
+.list-group li.active>a, a[aria-expanded="true"] {
+    color: #558aee;
+    border-left: 5px solid;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.sidebar-separador {
+    display: block;
+    width: 80%;
+    height: 3px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: rgba(115, 134, 213, 0.7);
+    box-shadow: 0 5px 10px rgba(115, 134, 213, 0.4);
+}
+
+.informacoes-conta {
+margin: 20px 0;
+
+}
+
+.botao-sidebar {
+width: 70%;
+margin: 10px 0;
+color: white;
+background: #ce9ffc;
+background: -moz-linear-gradient(-45deg, #7386D5 0%, #7367f0 100%);
+background: -webkit-linear-gradient(-45deg, #7386D5 0%,#7367f0 100%);
+background: linear-gradient(135deg, #7386D5 0%,#7367f0 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7386D5', endColorstr='#7367f0',GradientType=1 );
+
+}
+.botao-sidebar:active {
+
+}
+
+.botao-sidebar:hover {
+
+}
+
 /*----------------------- Novos botões de editar e excluir ----------------------------*/
  .editar-botao {
      border: 1px solid #ccc;
