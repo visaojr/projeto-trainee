@@ -23,13 +23,17 @@
   font-family: "Galano Grotesque";
   font-weight: bold;
   src: 
-  url("../fonts/galanogrotesquealtdemo-bold-webfont.woff2") format("woff2"), /* chrome、firefox */
-  url("../fonts/galanogrotesquealtdemo-bold-webfont.woff") format("woff"), /* chrome、firefox */
-
+  url("../fonts/GalanoGrotesqueBold.otf") format("otf"),
+  url("../fonts/GalanoGrotesqueBold.woff") format("woff");
 }
 
 
 body {
+    min-height: 100vh;
+  position: relative;
+  margin: 0;
+
+
   background-color: #f7f8fe;
   overflow-x: hidden;
     font-family:"Nurom", helvetica, arial, sans-serif;
@@ -40,8 +44,14 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  color: #8072bd;
+a, button {
+    font-family:"Nurom", helvetica, arial, sans-serif;
+    font-weight: 400;
+  color: #558aee;
+  outline: 0;
+}
+a:focus, button:focus {
+  outline: 0;
 }
 
 a:hover{
@@ -50,7 +60,6 @@ a:hover{
 a:active {
   opacity: 0.9;
 }
-
 button:active {
       background: #2E4A80;
 }
@@ -60,7 +69,7 @@ button:active {
  font-weight: bold;
   color: #494e57;
   min-height: 100vh;
-  margin-left: -15rem;
+  margin-left: -20rem;
   -webkit-transition: margin .25s ease-out;
   -moz-transition: margin .25s ease-out;
   -o-transition: margin .25s ease-out;
@@ -86,6 +95,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5ebfc', end
 
 #page-content-wrapper {
   min-width: 100vw;
+  position: relative;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -146,12 +156,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5ebfc', end
 vertical-align: bottom;
 }
 .list-group li a {
-  position: relative;
-  color: #9fa6b8;
-   padding: 20px 30px;
-    font-size: 15px;
+    font-family: "Galano Grotesque", helvetica, arial, sans-serif;
+    position: relative;
+    color: #9fa6b8;
+    padding: 20px 30px;
+    font-size: 14px;
     display: block;
-    font-weight: 700;
+    font-weight: bold;
     letter-spacing: .05em;
     border-left: 5px solid transparent;
 }
@@ -163,13 +174,14 @@ background: rgba(181, 181, 181, 0.05);
 }
 
 .list-group li ul li a {
-
+    font-family: "Nurom", helvetica, arial, sans-serif;
+    font-weight: 400;
     color: #9fa6b8;
-    font-size: 0.8em !important;
+    font-size: 15px;
+    text-transform: none;
     padding-left: 30px !important;
     background: rgba(85, 138, 238, 0.05);
-
-      transition: all ease 100ms;
+    transition: all ease 100ms;
 }
 
 
@@ -213,11 +225,9 @@ margin: 20px 0;
 
 }
 
-.botao-sidebar  {
-   box-sizing: border-box;
-  transition: all ease 200ms;
-width: 70%;
-margin: 10px 0;
+.botao-sistema, .botao-sidebar {
+box-sizing: border-box;
+transition: all ease 200ms;
 color: white;
 background: #558aee;
 background: -moz-linear-gradient(-45deg, #7aa0e8 0%, #558aee 100%);
@@ -225,17 +235,45 @@ background: -webkit-linear-gradient(-45deg, #7aa0e8 0%,#558aee 100%);
 background: linear-gradient(135deg, #7aa0e8 0%,#558aee 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa0e8', endColorstr='#558aee',GradientType=1 );
 box-shadow: 0 7px 15px rgba(85, 138, 238, 0.3);
-
 }
 
-.botao-sidebar:hover, .botao-sidebar:focus, .botao-sidebar:hover:active, .botao-sidebar:active {
+.botao-sistema  {
+margin: 20px 0;
+}
+.botao-sidebar  {
+width: 70%;
+margin: 10px 0;
+}
+
+.botao-sidebar:hover, .botao-sidebar:focus {
+opacity: 0.9;
+box-shadow: 0 7px 15px rgba(85, 138, 238, 0.5)
+}
+
+
+.thead-principal {
+      color: #fff;
 background: #558aee;
 background: -moz-linear-gradient(-45deg, #7aa0e8 0%, #558aee 100%);
 background: -webkit-linear-gradient(-45deg, #7aa0e8 0%,#558aee 100%);
 background: linear-gradient(135deg, #7aa0e8 0%,#558aee 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa0e8', endColorstr='#558aee',GradientType=1 );
-opacity: 0.9;
-box-shadow: 0 7px 15px rgba(85, 138, 238, 0.5)
+}
+
+.tasks .table {
+    box-shadow: 0 12px 25px rgba(128, 114, 189, 0.2);
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+.table thead th {
+  padding: 20px;
+}
+
+.table td, .table th {
+    padding: 20px;
+    vertical-align: middle;
+    border-top: none;
 }
 
 /*----------------------- Novos botões de editar e excluir ----------------------------*/
@@ -254,7 +292,7 @@ box-shadow: 0 7px 15px rgba(85, 138, 238, 0.5)
      width: calc(50% - 4px);
 }
 a.excluir-botao {
-    border: 1px solid #8072bd;
+    border: 1px solid #568bee;
     background: #fff;
     width: calc(50% - 4px);
     max-width: 100px;
@@ -264,7 +302,7 @@ a.excluir-botao {
 
  a.excluir-botao:hover, a.excluir-botao:focus {
      outline: 0;
-     background: #897ACC;
+     background: #568bee;
      color: #fff;
 }
 
@@ -282,4 +320,37 @@ a.excluir-botao {
      -webkit-transition: all ease-out 200ms;
      -o-transition: all ease-out 200ms;
      transition: all ease-out 200ms;
+}
+
+
+.footer-site {
+  position: absolute;
+  bottom: 0;
+    background: #558aee;
+    width: 100%;
+    -webkit-box-shadow: inset 0 8px 15px -8px #000000;
+    -moz-box-shadow: inset 0 8px 15px -8px #000000;
+    box-shadow: inset 0 8px 15px -8px #00000038;
+    display: block;
+    line-height: 45px;
+}
+.footer-site a {
+  color: white;
+}
+.footer-left p {
+    color: white;
+    font-size: 14px;
+    margin: 0;
+    line-height: 45px;
+}
+
+.visao-logo-footer img {
+    width: 22px;
+    opacity: 0.7;
+}
+
+.footer-left {
+    display: inline;
+    float: left;
+    width: 100%;
 }
