@@ -5,7 +5,8 @@ require_once 'header.php';
 
 <section class="todas-as-tarefas">
 
-		<h2 class="float-left mt-5">Todas as materias</h2>
+		<h2 class="text-left mt-5">Todas as tarefas</h2>
+		<span class="text-left">Aqui é exibido todas as tarefas criadas de todas as matérias</span>
 		
 	<table class="table mb-5 mt-2">
 		<thead class="thead-principal">
