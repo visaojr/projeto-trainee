@@ -55,7 +55,8 @@ $tarefa = new Task();
 				<img src="assets/images/perfil.jpg">
 			</div>
 
-			<div class="text-center my-3 sidebar-heading">Olá, <br>Henrique</br>
+			<div class="text-center my-3 sidebar-heading">Olá,
+				<br>Henrique</br>
 			</div>
 
 			<ul class="list-unstyled list-group">
@@ -106,11 +107,11 @@ $tarefa = new Task();
 		<!-- Conteúdo interno no sistema -->
 		<div id="page-content-wrapper">
 
-			<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+			<nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom">
 				<button class="btn btn-primary" id="menu-toggle">Menu</button>
 			</nav>
 
-			<div class="container">
+			
 
 				
 
