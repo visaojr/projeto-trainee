@@ -1,12 +1,15 @@
 <?php
 
+
+
+
 use VisaoJR\Treinee\model\Task;
 use VisaoJR\Treinee\model\Matter;
 
 require_once 'model/Matter.php';
 require_once 'model/Task.php';
 
-
+$tarefa = new Task();
 /*require_once '../autoloader.php';*/
 
 $materia = new Matter();
@@ -21,7 +24,7 @@ $tarefa = new Task();
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="theme-color" content="#fb9039">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<script src='assets/fullcalendar/lib/jquery.min.js'></script>
 	<!-- Normalização de estlitos entre navegadores -->
 	<link href="assets/css/bootstrap-reboot.css" rel="stylesheet">
 	<!-- Bootstrap CSS -->
@@ -30,6 +33,11 @@ $tarefa = new Task();
 	<link href="assets/css/style.css" rel="stylesheet">
 	<!-- Font Awesome - Fonte com apenas ícones para se usar no sistema inteiro -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+	<link href='assets/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
+	<link href='assets/fullcalendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+
+	
 
 
 	<title>Meu Calendário</title>
