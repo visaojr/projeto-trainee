@@ -1,0 +1,170 @@
+@font-face {font-family: "Nurom";
+  font-weight: 700;
+  src: url("../fonts/Nurom-Bold.eot"); /* IE9*/
+  src: url("../fonts/Nurom-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/Nurom-Bold.woff2") format("woff2"), /* chrome、firefox */
+  url("../fonts/Nurom-Bold.woff") format("woff"), /* chrome、firefox */
+  url("../fonts/Nurom-Bold.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("../fonts/Nurom-Bold.svg#Nurom W00 Bold") format("svg"); /* iOS 4.1- */
+}
+
+@font-face {
+  font-family: "Nurom";
+  font-weight: 400;
+  src: url("../fonts/Nurom-Medium.eot"); /* IE9*/
+  src: url("../fonts/Nurom-Medium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/Nurom-Medium.woff2") format("woff2"), /* chrome、firefox */
+  url("../fonts/Nurom-Medium.woff") format("woff"), /* chrome、firefox */
+  url("../fonts/Nurom-Medium.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("../fonts/Nurom-Medium.svg#Nurom W00 Medium") format("svg"); /* iOS 4.1- */
+}
+
+body {
+  overflow-x: hidden;
+    font-family:"Nurom", helvetica, arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #8072bd;
+}
+
+a:hover{
+  color: #897ACC;
+}
+
+
+#sidebar-wrapper {
+  color: #484e57;
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper {
+background: #e5ebfc;
+background: -moz-linear-gradient(left, #e5ebfc 90%, #dee5f6 100%);
+background: -webkit-linear-gradient(left, #e5ebfc 90%,#dee5f6 100%);
+background: linear-gradient(to right, #e5ebfc 90%,#dee5f6 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5ebfc', endColorstr='#dee5f6',GradientType=1 );
+}
+
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
+
+#sidebar-wrapper .list-group {
+  width: 20rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+
+/*----------------------- Estilizando os ítens da sidebar ----------------------------*/
+
+.imagem-perfil {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+
+}
+
+
+.imagem-perfil img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(128, 114, 189, 0.4);
+    box-shadow: 0 12px 25px rgba(128, 114, 189, 0.1);
+    transition: all ease-in-out 250ms;
+}
+
+
+.imagem-perfil img:hover {
+    border: 5px solid rgba(128, 114, 189, 0.6);
+    box-shadow: 0 10px 20px rgba(128, 114, 189, 0.3);
+}
+
+
+
+.menu-itens {
+  
+}
+/*----------------------- Novos botões de editar e excluir ----------------------------*/
+ .editar-botao {
+     border: 1px solid #ccc;
+     padding: 6px 1px;
+     background: #fff;
+     width: calc(50% - 4px);
+     max-width: 100px;
+     -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+}
+ .editar-botao:hover {
+     border: 1px solid #ccc;
+     background: #f8f8f8;
+     width: calc(50% - 4px);
+}
+a.excluir-botao {
+    border: 1px solid #8072bd;
+    background: #fff;
+    width: calc(50% - 4px);
+    max-width: 100px;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+}
+
+ a.excluir-botao:hover, a.excluir-botao:focus {
+     outline: 0;
+     background: #897ACC;
+     color: #fff;
+}
+
+ a.editar-botao:hover, a.excluir-botao:hover {
+     -webkit-transition: all ease 200ms;
+     -o-transition: all ease 200ms;
+     transition: all ease 200ms;
+     -webkit-box-shadow: 0 5px 16px 0 rgba(0, 0, 0, .1);
+     box-shadow: 0 5px 16px 0 rgba(0, 0, 0, .1);
+
+}
+
+/*------ TransiÃ§Ãµes para as sombras de todos os botoes --------*/
+ a.excluir-botao, .editar-botao {
+     -webkit-transition: all ease-out 200ms;
+     -o-transition: all ease-out 200ms;
+     transition: all ease-out 200ms;
+}
