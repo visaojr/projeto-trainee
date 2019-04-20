@@ -46,7 +46,10 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Galano Grotesque", helvetica, arial, sans-serif;
   font-weight: bold;
+  margin: 20px 0;
 }
+
+
 
 h5 {
   font-size: 21px;
@@ -71,7 +74,7 @@ button:active {
       background: #2E4A80;
 }
 
-section.tasks {
+section {
     max-width: 80%;
     margin: 0 auto;
 }
@@ -284,7 +287,7 @@ background: linear-gradient(135deg, #7aa0e8 0%,#558aee 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa0e8', endColorstr='#558aee',GradientType=1 );
 }
 
-.tasks .table {
+section .table {
     box-shadow: 0 12px 25px rgba(128, 114, 189, 0.2);
     border-radius: 9px;
     overflow: hidden;
