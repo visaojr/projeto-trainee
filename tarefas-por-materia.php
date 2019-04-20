@@ -72,25 +72,36 @@ require_once 'header.php';
 
 	<h2>Faltas</h2>
 
-	<div class="form-group">
-		<label for="exampleSelect1">Selecione a quantidade de faltas que você possuí na matéria</label>
-		<select class="form-control" id="exampleSelect1">
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-			<option>5</option>
-			<option>6</option>
-			<option>7</option>
-			<option>8</option>
-			<option>9</option>
-		</select>
+	<div class="faltas">
+		<div class="form-group">
+			<label for="exampleSelect1">Selecione a quantidade de faltas que você possuí na matéria</label>
+			<select class="form-control" id="exampleSelect1">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>
+				<option>Mais do que 9</option>
+			</select>
 
-		<button class="btn botao-sistema" href="#">Salvar</button>
+			<button class="btn botao-sistema" href="#">Salvar</button>
+		</div>
+
+
+		<!-- A mensagem abaixo deve ser exibida com 7 ou mais faltas, como forma de aviso ao aluno. -->
+		<h5 style="color:#fe5421">Atenção: com 9 ou mais faltas, você será reprovado em %nomedamateria% por falta!</h5>
+
+		<!-- A mensagem abaixo deve ser exibida  apenas de 1 à 8 -->
+		<h5>Você pode faltar mais %x% vezes antes de ser reprovado.</h5>
+
+		<!-- A mensagem abaixo deve ser exibida de 9 ou acima -->
+		<h5 style="color:#F31431">Você foi reprovado por falta em %nomedamateria%.</h5>
+
 	</div>
-
-	<h5>Você pode faltar mais %X% vezes antes de ser reprovado</h5>
-	<h5 style="font-weight: bold; color: red">Você foi reprovado em %NOME DA MATÉRIA% por falta!</h5>
 
 
 </section>

@@ -10,7 +10,7 @@ require_once 'header.php';
 		
 	</div>
 
-	<div id='calendar'></div>
+	<div id='calendar' class="my-5"></div>
 		
 
 
