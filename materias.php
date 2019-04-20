@@ -1,11 +1,15 @@
 <?php
 
 use VisaoJR\Treinee\model\Task;
+use VisaoJR\Treinee\model\Matter;
+
+require_once 'model/Matter.php';
 require_once 'model/Task.php';
 
 
 /*require_once '../autoloader.php';*/
 
+$materia = new Matter();
 $tarefa = new Task();
 
 ?>
@@ -54,15 +58,14 @@ $tarefa = new Task();
         <li class="active">
         	<a href="#materias_submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-graduation-cap mr-4"></i>Matérias</a>
         	<ul class="list-unstyled collapse" id="materias_submenu">
+        		<?php
+			        $stmtMateria = $materia->index();
+			        while ($row = $stmtMateria->fetch(PDO::FETCH_OBJ)) {   
+			    ?>
         		<li>
-        			<a href="#">Física 2</a>
+        			<a href="#"><?php echo $row->name; ?></a>
         		</li>
-        		<li>
-        			<a href="#">Calculo 3</a>
-        		</li>
-        		<li>
-        			<a href="#">Matemática Discreta</a>
-        		</li>
+        		<?php } ?>
         	</ul>
         </li>
     </ul>
@@ -104,7 +107,7 @@ $tarefa = new Task();
 							<?php
 						        $stmtTarefa = $tarefa->index();
 						        while ($row = $stmtTarefa->fetch(PDO::FETCH_OBJ)) {   
-						            ?>
+						    ?>
 							<tr>
 								<td><?php echo $row->name; ?></td>
 								<td><?php echo $row->nota; ?></td>

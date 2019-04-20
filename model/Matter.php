@@ -48,7 +48,7 @@ class Matter{
             $stmt->execute();
             return 1;
         }catch(PDOException $e){
-            echo $e->getMessage()
+            echo $e->getMessage();
             return 0;
         }
     }
@@ -69,6 +69,7 @@ class Matter{
     public function index(){
         $stmt = $this->conn->prepare("SELECT * FROM `matter` WHERE 1");
         $stmt->execute();
+        return $stmt;
     }
 
 
