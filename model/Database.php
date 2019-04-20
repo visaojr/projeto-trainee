@@ -6,10 +6,10 @@ use \PDOException;
 
 class Database
 {
-    private $host = "localhost";
+    private $host = "54.94.154.192" ;
     private $db_name = "treinamento_trainee";
     private $username = "root";
-    private $password = "";
+    private $password = "1234";
 
     public $conn;
 
