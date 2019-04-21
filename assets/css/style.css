@@ -224,8 +224,15 @@ background: rgba(181, 181, 181, 0.05);
 
 .list-group li.active>a, a[aria-expanded="true"] {
     color: #558aee;
-        background: rgba(85, 138, 238, 0.05);
+    background: rgba(85, 138, 238, 0.05);
     border-left: 5px solid;
+    transition: all ease 200ms;
+}
+
+
+.list-group li.active>a:hover {
+    color: #4a79d0;
+    background: rgba(85, 138, 238, 0.15)
 }
 
 .dropdown-toggle::after {

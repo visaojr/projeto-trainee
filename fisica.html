@@ -1,0 +1,147 @@
+
+<!DOCTYPE HTML>
+
+<html lang="pt-br">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="theme-color" content="#fb9039">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Normalização de estlitos entre navegadores -->
+	<link href="assets/css/bootstrap-reboot.css" rel="stylesheet">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- Estilo padrão -->
+	<link href="assets/css/style.css" rel="stylesheet">
+	<!-- Font Awesome - Fonte com apenas ícones para se usar no sistema inteiro -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+	<title>Meu Calendário</title>
+</head>
+
+<body>
+	<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+
+	<div class="mx-auto mt-5 imagem-perfil">
+		<img src="assets/images/perfil.jpg">
+	</div>
+
+      <div class="text-center my-3 sidebar-heading">Olá, <br>Henrique</br>
+      </div>
+
+      <ul class="list-unstyled list-group">
+      	<li>
+      		<a href="index.html"><i class="far fa-calendar mr-4"></i>Meu Calendário</a>
+      	</li>
+
+        <li class="active">
+        	<a href="#materias_submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-graduation-cap mr-4"></i>Provas e tarefas</a>
+        	<ul class="list-unstyled collapse" id="materias_submenu">
+        		<li>
+        			<a href="fisica.html">Física 2</a>
+        		</li>
+        		<li>
+        			<a href="calculo.html">Calculo 3</a>
+        		</li>
+ 
+        	</ul>
+        </li>
+
+        <li>
+      		<a href="materias.html"><i class="fas fa-list mr-4"></i></i>Todas as matérias</a>
+      	</li>
+
+
+    </ul>
+</div>
+    <!-- /#sidebar-wrapper -->
+
+
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+
+			<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+				<button class="btn btn-primary" id="menu-toggle">Menu</button>
+			</nav>
+			
+			<div class="container-fluid">
+
+				<section>
+					<h1 class="mt-4">Provas e tarefas de Física</h1>			
+					<table class="table">
+						<thead class="thead-dark">
+							<tr>
+								<th scope="col">Tarefa</th>
+								<th scope="col">Valor (pontos)</th>
+								<th scope="col">Data</th>
+								<th scope="col">Ações</th>
+							</tr>
+						</thead>
+						<tbody class="table-striped">
+							<tr>
+								<td>Prova [materia] 1</td>
+								<td>30</td>
+								<td>09/05/2019</td>
+								<td>
+									<a class="btn editar-botao" href="#" data-toggle="modal" data-target="#editEscola<?php echo $row->id ?>">Editar</a>
+									<a title="Excluir" class="btn excluir-botao" href="#" data-toggle="modal" data-target="#delete-modal"><i class="fas fa-trash"></i></a>
+								</td>
+							</tr>
+							<tr>
+								<td>Prova [materia] 2</td>
+								<td>35</td>
+								<td>09/02/2019</td>
+								<td>
+									<a class="btn editar-botao" href="#" data-toggle="modal" data-target="#editEscola">Editar</a>
+									<a title="Excluir" class="btn excluir-botao" href="#" data-toggle="modal" data-target="#delete-modal"><i class="fas fa-trash"></i></a>
+								</td>
+							</tr>
+							<tr>
+								<td>Seminário [materia]</td>
+								<td>25</td>
+								<td>02/05/2019</td>
+								<td>
+									<a class="btn editar-botao" href="#" data-toggle="modal" data-target="#editEscola">Editar</a>
+									<a title="Excluir" class="btn excluir-botao" href="#" data-toggle="modal" data-target="#delete-modal"><i class="fas fa-trash"></i></a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+
+					<h2>Faltas</h2>
+
+
+				</section>
+			</div>
+		</div>
+		<!-- /#page-content-wrapper -->
+
+	</div>
+	<!-- /#wrapper -->
+
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+	<!-- Script para fazer com que o botão esconda a barra lateral -->
+	<script>
+		$("#menu-toggle").click(function(e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("toggled");
+		});
+	</script>
+
+
+
+</body>
+
+</html>
