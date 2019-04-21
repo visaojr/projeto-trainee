@@ -80,7 +80,7 @@ $tarefa = new Task();
 					</ul>
 				</li>
 				<li>
-					<a href="#"><i class="fas fa-user-graduate mr-4"></i>Grade curricular</a>
+					<a href="grade-curricular.php"><i class="fas fa-user-graduate mr-4"></i>Grade curricular</a>
 				</li>
 			</ul>
 
