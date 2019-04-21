@@ -22,8 +22,6 @@
 </head>
 
 <body>
-
-
 	<div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
@@ -38,38 +36,30 @@
 
       <ul class="list-unstyled list-group">
       	<li>
-      		<a href="#"><i class="far fa-calendar mr-4"></i>Meu Calendário</a>
+      		<a href="index.html"><i class="far fa-calendar mr-4"></i>Meu Calendário</a>
       	</li>
 
         <li class="active">
         	<a href="#materias_submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-graduation-cap mr-4"></i>Matérias</a>
         	<ul class="list-unstyled collapse" id="materias_submenu">
         		<li>
-        			<a href="#">Física 2</a>
+        			<a href="materia.html">Física 2</a>
         		</li>
         		<li>
-        			<a href="#">Calculo 3</a>
+        			<a href="materia.html">Calculo 3</a>
         		</li>
         		<li>
-        			<a href="#">Matemática Discreta</a>
+        			<a href="materia.html">Matemática Discreta</a>
         		</li>
         	</ul>
         </li>
 
         <li>
-      		<a href="#"><i class="fas fa-list mr-4"></i></i>Todas as matérias</a>
+      		<a href="materias.html"><i class="fas fa-list mr-4"></i></i>Todas as matérias</a>
       	</li>
 
 
     </ul>
-
-<span class="sidebar-separador"></span>
-
-<div class="text-center informacoes-conta">
-	<button class="btn botao-sidebar">Minha conta</button>
-	<button class="btn botao-sidebar">Sair</button>
-</div>
-
 </div>
     <!-- /#sidebar-wrapper -->
 
@@ -82,53 +72,81 @@
 			</nav>
 			
 			<div class="container-fluid">
-				<h1 class="mt-4">Tarefas</h1>
+				<h1 class="mt-4">Todas Materias</h1>
 				<section>
-			
-					<table class="table">
-						<thead class="thead-dark">
-							<tr>
-								<th scope="col">Tarefa</th>
-								<th scope="col">Valor (pontos)</th>
-								<th scope="col">Data</th>
-								<th scope="col">Ações</th>
-							</tr>
-						</thead>
-						<tbody class="table-striped">
-							<tr>
-								<td>Prova de OAC</td>
-								<td>30</td>
-								<td>09/05</td>
-								<td>
-									<a class="btn editar-botao" href="#" data-toggle="modal" data-target="#editEscola<?php echo $row->id ?>">Editar</a>
-									<a title="Excluir" class="btn excluir-botao" href="#" data-toggle="modal" data-target="#delete-modal"><i class="fas fa-trash"></i></a>
-								</td>
-							</tr>
-							<tr>
-								<td>Prova de Cálculo 3</td>
-								<td>25</td>
-								<td>09/02</td>
-								<td>
-									<a class="btn editar-botao" href="#" data-toggle="modal" data-target="#editEscola">Editar</a>
-									<a title="Excluir" class="btn excluir-botao" href="#" data-toggle="modal" data-target="#delete-modal"><i class="fas fa-trash"></i></a>
-								</td>
-							</tr>
-							<tr>
-								<td>Prova de Física 2</td>
-								<td>35</td>
-								<td>02/05</td>
-								<td>
-									<a class="btn editar-botao" href="#" data-toggle="modal" data-target="#editEscola">Editar</a>
-									<a title="Excluir" class="btn excluir-botao" href="#" data-toggle="modal" data-target="#delete-modal"><i class="fas fa-trash"></i></a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-
-
-					<h2>Faltas</h2>
-
-
+						<div class="row">
+							<div class="col-md-4 col-sm-6 mb-3">
+								<div class="card" style="width: 18rem; background-color: rgb(149, 238, 154)">
+									<div class="card-body">
+										<h5 class="card-title">Cálculo 1</h5>
+										<a href="materia.html" class="btn btn-warning ml-auto">Ver</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-6 mb-3">
+								<div class="card" style="width: 18rem; background-color: rgb(149, 238, 154)">
+									<div class="card-body">
+										<h5 class="card-title">Física 1</h5>
+										<a href="materia.html" class="btn btn-warning ml-auto">Ver</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-6 mb-3">
+								<div class="card" style="width: 18rem; background-color: rgb(149, 186, 255)">
+									<div class="card-body">
+										<h5 class="card-title">Matemática Discreta</h5>
+										<a href="#" class="btn btn-success">Concluir</a>
+										<a href="materia.html" class="btn btn-warning ml-auto">Ver</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-6 mb-3">
+								<div class="card" style="width: 18rem; background-color: rgb(149, 186, 255)">
+									<div class="card-body">
+										<h5 class="card-title">Matemática Discreta</h5>
+										<a href="#" class="btn btn-success">Concluir</a>
+										<a href="materia.html" class="btn btn-warning ml-auto">Ver</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-6 mb-3">
+								<div class="card" style="width: 18rem; background-color: rgb(149, 186, 255)">
+									<div class="card-body">
+										<h5 class="card-title">Física 2</h5>
+										<a href="#" class="btn btn-success">Concluir</a>
+										<a href="materia.html" class="btn btn-warning ml-auto">Ver</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-6 mb-3">
+								<div class="card" style="width: 18rem; background-color: rgb(149, 186, 255)">
+									<div class="card-body">
+										<h5 class="card-title">Cálculo 3</h5>
+										<a href="#" class="btn btn-success">Concluir</a>
+										<a href="materia.html" class="btn btn-warning ml-auto">Ver</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-6 mb-3">
+								<div class="card" style="width: 18rem; background-color: rgb(252, 151, 151)">
+									<div class="card-body">
+										<h5 class="card-title">Dispositivos Móveis</h5>
+										<a href="#" class="btn btn-primary">Ativar</a>
+										<a href="materia.html" class="btn btn-warning ml-auto">Ver</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-6 mb-3">
+								<div class="card" style="width: 18rem; background-color: rgb(252, 151, 151)">
+									<div class="card-body">
+										<h5 class="card-title">Engenharia de Software</h5>
+										<a href="#" class="btn btn-primary">Ativar</a>
+										<a href="materia.html" class="btn btn-warning ml-auto">Ver</a>
+									</div>
+								</div>
+							</div>
+	
+						</div>
 				</section>
 			</div>
 		</div>

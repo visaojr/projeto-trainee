@@ -1,18 +1,4 @@
-<?php
 
-use VisaoJR\Treinee\model\Task;
-use VisaoJR\Treinee\model\Matter;
-
-require_once 'model/Matter.php';
-require_once 'model/Task.php';
-
-
-/*require_once '../autoloader.php';*/
-
-$materia = new Matter();
-$tarefa = new Task();
-
-?>
 <!DOCTYPE HTML>
 
 <html lang="pt-br">
@@ -28,7 +14,6 @@ $tarefa = new Task();
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<!-- Estilo padrão -->
 	<link href="assets/css/style.css" rel="stylesheet">
-	<meta charset="utf-8" src="assets/fullcalendar/demos/">
 	<!-- Font Awesome - Fonte com apenas ícones para se usar no sistema inteiro -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
@@ -37,8 +22,6 @@ $tarefa = new Task();
 </head>
 
 <body>
-
-
 	<div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
@@ -53,37 +36,30 @@ $tarefa = new Task();
 
       <ul class="list-unstyled list-group">
       	<li>
-      		<a href="#"><i class="far fa-calendar mr-4"></i>Meu Calendário</a>
+      		<a href="index.html"><i class="far fa-calendar mr-4"></i>Meu Calendário</a>
       	</li>
 
         <li class="active">
         	<a href="#materias_submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-graduation-cap mr-4"></i>Matérias</a>
         	<ul class="list-unstyled collapse" id="materias_submenu">
-        		<?php
-			        $stmtMateria = $materia->index();
-			        while ($row = $stmtMateria->fetch(PDO::FETCH_OBJ)) {   
-			    ?>
         		<li>
-        			<a href="#"><?php echo $row->name; ?></a>
+        			<a href="materia.html">Física 2</a>
         		</li>
-        		<?php } ?>
+        		<li>
+        			<a href="materia.html">Calculo 3</a>
+        		</li>
+        		<li>
+        			<a href="materia.html">Matemática Discreta</a>
+        		</li>
         	</ul>
         </li>
 
         <li>
-      		<a href="#"><i class="fas fa-list mr-4"></i></i>Todas as matérias</a>
+      		<a href="materias.html"><i class="fas fa-list mr-4"></i></i>Todas as matérias</a>
       	</li>
 
 
     </ul>
-
-<span class="sidebar-separador"></span>
-
-<div class="text-center informacoes-conta">
-	<button class="btn botao-sidebar">Minha conta</button>
-	<button class="btn botao-sidebar">Sair</button>
-</div>
-
 </div>
     <!-- /#sidebar-wrapper -->
 
@@ -94,13 +70,11 @@ $tarefa = new Task();
 			<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
 				<button class="btn btn-primary" id="menu-toggle">Menu</button>
 			</nav>
-
+			
 			<div class="container-fluid">
-				<h1 class="mt-4">Calendário</h1>
+				<h1 class="mt-4">Tarefas matéria X</h1>
 				<section>
-					<h1>Tarefas</h1>
-
-
+			
 					<table class="table">
 						<thead class="thead-dark">
 							<tr>
@@ -111,22 +85,33 @@ $tarefa = new Task();
 							</tr>
 						</thead>
 						<tbody class="table-striped">
-							<?php
-						        $stmtTarefa = $tarefa->index();
-						        while ($row = $stmtTarefa->fetch(PDO::FETCH_OBJ)) {   
-						    ?>
 							<tr>
-								<td><?php echo $row->name; ?></td>
-								<td><?php echo $row->nota; ?></td>
-								<td><?php echo $row->date; ?></td>
+								<td>Prova [materia] 1</td>
+								<td>30</td>
+								<td>09/05/2019</td>
 								<td>
 									<a class="btn editar-botao" href="#" data-toggle="modal" data-target="#editEscola<?php echo $row->id ?>">Editar</a>
 									<a title="Excluir" class="btn excluir-botao" href="#" data-toggle="modal" data-target="#delete-modal"><i class="fas fa-trash"></i></a>
 								</td>
 							</tr>
-								<?php
-									}
-								?>
+							<tr>
+								<td>Prova [materia] 2</td>
+								<td>35</td>
+								<td>09/02/2019</td>
+								<td>
+									<a class="btn editar-botao" href="#" data-toggle="modal" data-target="#editEscola">Editar</a>
+									<a title="Excluir" class="btn excluir-botao" href="#" data-toggle="modal" data-target="#delete-modal"><i class="fas fa-trash"></i></a>
+								</td>
+							</tr>
+							<tr>
+								<td>Seminário [materia]</td>
+								<td>25</td>
+								<td>02/05/2019</td>
+								<td>
+									<a class="btn editar-botao" href="#" data-toggle="modal" data-target="#editEscola">Editar</a>
+									<a title="Excluir" class="btn excluir-botao" href="#" data-toggle="modal" data-target="#delete-modal"><i class="fas fa-trash"></i></a>
+								</td>
+							</tr>
 						</tbody>
 					</table>
 
