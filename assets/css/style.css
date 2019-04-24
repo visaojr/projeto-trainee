@@ -1,167 +1,176 @@
-@font-face {font-family: "Nurom";
-  font-weight: 700;
-  src: url("../fonts/Nurom-Bold.eot"); /* IE9*/
-  src: url("../fonts/Nurom-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("../fonts/Nurom-Bold.woff2") format("woff2"), /* chrome、firefox */
-  url("../fonts/Nurom-Bold.woff") format("woff"), /* chrome、firefox */
-  url("../fonts/Nurom-Bold.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url("../fonts/Nurom-Bold.svg#Nurom W00 Bold") format("svg"); /* iOS 4.1- */
+/* Aqui nós adicionaremos novas fontes mais bonitas, para usarmos no site. Carregamos ela da pasta assets/fonts */
+@font-face {
+    font-family: 'Nurom';
+    font-weight: 700;
+
+    src: url('../fonts/Nurom-Bold.eot'); /* IE9*/
+    src: url('../fonts/Nurom-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Nurom-Bold.woff2') format('woff2'), /* chrome、firefox */
+    url('../fonts/Nurom-Bold.woff') format('woff'), /* chrome、firefox */
+    url('../fonts/Nurom-Bold.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../fonts/Nurom-Bold.svg#Nurom W00 Bold') format('svg'); /* iOS 4.1- */
 }
 
 @font-face {
-  font-family: "Nurom";
-  font-weight: 400;
-  src: url("../fonts/Nurom-Medium.eot"); /* IE9*/
-  src: url("../fonts/Nurom-Medium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("../fonts/Nurom-Medium.woff2") format("woff2"), /* chrome、firefox */
-  url("../fonts/Nurom-Medium.woff") format("woff"), /* chrome、firefox */
-  url("../fonts/Nurom-Medium.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url("../fonts/Nurom-Medium.svg#Nurom W00 Medium") format("svg"); /* iOS 4.1- */
+    font-family: 'Nurom';
+    font-weight: 400;
+
+    src: url('../fonts/Nurom-Medium.eot'); /* IE9*/
+    src: url('../fonts/Nurom-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/Nurom-Medium.woff2') format('woff2'), /* chrome、firefox */
+    url('../fonts/Nurom-Medium.woff') format('woff'), /* chrome、firefox */
+    url('../fonts/Nurom-Medium.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../fonts/Nurom-Medium.svg#Nurom W00 Medium') format('svg'); /* iOS 4.1- */
 }
 
 @font-face {
-  font-family: "Galano Grotesque";
-  font-weight: bold;
-  src: 
-  url("../fonts/GalanoGrotesqueBold.otf") format("otf"),
-  url("../fonts/GalanoGrotesqueBold.woff") format("woff");
+    font-family: 'Galano Grotesque';
+    font-weight: bold;
+
+    src: url('../fonts/GalanoGrotesqueBold.otf') format('otf'),
+    url('../fonts/GalanoGrotesqueBold.woff') format('woff');
 }
 
-
+/* Definimos algumas propriedades que serão aplicadas em toda a página */
 body {
-  min-height: 100vh;
-  position: relative;
-  margin: 0;
-  background-color: #f7f8fe;
-  overflow-x: hidden;
-  font-family:"Nurom", helvetica, arial, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-style:normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Nurom', helvetica, arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f7f8fe;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-
+/* Definimos uma outra fonte padrão para todos os títulos */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Galano Grotesque", helvetica, arial, sans-serif;
-  font-weight: bold;
-
+    font-family: 'Galano Grotesque', helvetica, arial, sans-serif;
+    font-weight: bold;
 }
 
-
+h1, h2 {
+    margin: 4rem 0 1rem;
+}
 
 h5 {
-  font-size: 21px;
+    font-size: 21px;
 }
 a, button {
-    font-family:"Nurom", helvetica, arial, sans-serif;
+    font-family: 'Nurom', helvetica, arial, sans-serif;
     font-weight: 400;
-  color: #558aee;
-  outline: 0;
-}
-a:focus, button:focus {
-  outline: 0;
+    color: #558aee;
+    outline: 0;
 }
 
-a:hover{
-  color: #897ACC;
+a:focus, button:focus {
+    outline: 0;
+}
+
+a:hover {
+    color: #897acc;
 }
 a:active {
-  opacity: 0.9;
+    opacity: 0.9;
 }
 button:active {
-      background: #2E4A80;
+    background: #2e4a80;
 }
 
-section {
-    max-width: 80%;
-    margin: 0 auto;
+/* Adicionando estilos na barra lateral */
+
+#sidebar-wrapper {
+    font-family: 'Galano Grotesque', helvetica, arial, sans-serif;
+    font-weight: bold;
+    min-height: 100vh;
+    margin-left: -20rem;
+    -webkit-transition: margin 0.25s ease-out;
+       -moz-transition: margin 0.25s ease-out;
+         -o-transition: margin 0.25s ease-out;
+            transition: margin 0.25s ease-out;
+    color: #494e57;
+    background: #e5ebfc;
+    background:    -moz-linear-gradient(left, #e5ebfc 90%, #dee5f6 100%);
+    background: -webkit-linear-gradient(left, #e5ebfc 90%,#dee5f6 100%);
+    background:         linear-gradient(to right, #e5ebfc 90%,#dee5f6 100%);
+
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5ebfc', endColorstr='#dee5f6',GradientType=1 );
 }
 
-/*----------------------- Ocultando o menu de sanduiche em telas grandes ----------------------------*/
+#sidebar-wrapper .sidebar-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0.875rem 1.25rem;
+    letter-spacing: 0.02em;
+}
+
+#sidebar-wrapper .list-group {
+    width: 20rem;
+}
+
+#page-content-wrapper {
+    position: relative;
+    min-width: 100vw;
+    padding-bottom: 48px;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+/*----------------------- 
+Os media-queries, assim chamados, no permite modificar
+estilos que só serão aplicados em determinados tamanhos de tela, dessa forma podemos
+fazer o layout funcionar bem em todos os tamanhos de tela e dispositivos 
+----------------------------*/
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        width: 100%;
+        min-width: 0;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -20rem;
+    }
+}
+
+/*----------------------- 
+Ocultando o menu de sanduiche em telas grandes 
+(diminua o seu navegador e veja a responsividade do menu!)
+----------------------------*/
 
 @media only screen and (min-width : 768px) {
-   .navbar {
+    .navbar {
         display: none!important;
     }
 }
 
-
-
-#sidebar-wrapper {
- font-family: "Galano Grotesque", helvetica, arial, sans-serif;
- font-weight: bold;
-  color: #494e57;
-  min-height: 100vh;
-  margin-left: -20rem;
-  -webkit-transition: margin .25s ease-out;
-  -moz-transition: margin .25s ease-out;
-  -o-transition: margin .25s ease-out;
-  transition: margin .25s ease-out;
-  background: #e5ebfc;
-background: -moz-linear-gradient(left, #e5ebfc 90%, #dee5f6 100%);
-background: -webkit-linear-gradient(left, #e5ebfc 90%,#dee5f6 100%);
-background: linear-gradient(to right, #e5ebfc 90%,#dee5f6 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5ebfc', endColorstr='#dee5f6',GradientType=1 );
-}
-
-
-#sidebar-wrapper .sidebar-heading {
-  padding: 0.875rem 1.25rem;
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: .02em;
-}
-
-#sidebar-wrapper .list-group {
-  width: 20rem;
-}
-
-#page-content-wrapper {
-  min-width: 100vw;
-  position: relative;
-  padding-bottom: 48px;
-}
-
-#wrapper.toggled #sidebar-wrapper {
-  margin-left: 0;
-}
-
-@media (min-width: 768px) {
-  #sidebar-wrapper {
-    margin-left: 0;
-  }
-
-  #page-content-wrapper {
-    min-width: 0;
-    width: 100%;
-  }
-
-  #wrapper.toggled #sidebar-wrapper {
-    margin-left: -20rem;
-  }
-}
-
-
 /*----------------------- Estilizando os ítens da sidebar ----------------------------*/
 
 .imagem-perfil {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
 }
-
 
 .imagem-perfil img {
     width: 130px;
     height: 130px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid rgba(128, 114, 189, 0.4);
-    box-shadow: 0 12px 25px rgba(128, 114, 189, 0.2);
     transition: all ease-in-out 250ms;
+    border: 5px solid rgba(128, 114, 189, 0.4);
+    border-radius: 50%;
+    box-shadow: 0 12px 25px rgba(128, 114, 189, 0.2);
+
+    object-fit: cover;
 }
 
 
@@ -170,76 +179,71 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5ebfc', end
     box-shadow: 0 10px 20px rgba(128, 114, 189, 0.4);
 }
 
-
-
 .list-group {
-  text-transform: uppercase;
     padding: 20px 0;
+    text-transform: uppercase;
 }
 
 .list-group i {
-  font-size: 22px;
-vertical-align: bottom;
+    font-size: 22px;
+    vertical-align: bottom;
 }
 .list-group li a {
-    font-family: "Galano Grotesque", helvetica, arial, sans-serif;
-    position: relative;
-    color: #9fa6b8;
-    padding: 20px 30px;
+    font-family: 'Galano Grotesque', helvetica, arial, sans-serif;
     font-size: 14px;
-    display: block;
     font-weight: bold;
-    letter-spacing: .05em;
+    position: relative;
+    display: block;
+    padding: 20px 30px;
+    letter-spacing: 0.05em;
+    color: #9fa6b8;
     border-left: 5px solid transparent;
 }
 
 .list-group li a:hover {
-  text-decoration: none;
-background: rgba(181, 181, 181, 0.05);
-
+    text-decoration: none;
+    background: rgba(181, 181, 181, 0.05);
 }
 
 .list-group li ul li a {
-    font-family: "Nurom", helvetica, arial, sans-serif;
-    font-weight: 400;
-    color: #9fa6b8;
+    font-family: 'Nurom', helvetica, arial, sans-serif;
     font-size: 15px;
-    text-transform: none;
+    font-weight: 400;
     padding-left: 30px !important;
-    background: rgba(85, 138, 238, 0.05);
     transition: all ease 100ms;
+    text-transform: none;
+    color: #9fa6b8;
+    background: rgba(85, 138, 238, 0.05);
 }
-
 
 .list-group li ul li a:hover {
     color: white;
     background: #558aee;
-    background: -moz-linear-gradient(-45deg, #7aa0e8 0%, #558aee 100%);
+    background:    -moz-linear-gradient(-45deg, #7aa0e8 0%, #558aee 100%);
     background: -webkit-linear-gradient(-45deg, #7aa0e8 0%,#558aee 100%);
-    background: linear-gradient(135deg, #7aa0e8 0%,#558aee 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa0e8', endColorstr='#558aee',GradientType=1 );
+    background:         linear-gradient(135deg, #7aa0e8 0%,#558aee 100%);
     box-shadow: 0 7px 15px -5px rgba(85, 138, 238, 0.5);
+
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa0e8', endColorstr='#558aee',GradientType=1 );
 }
 
-
-.list-group li.active>a, a[aria-expanded="true"] {
-    color: #558aee;
-    background: rgba(85, 138, 238, 0.05);
-    border-left: 5px solid;
+.list-group li.active > a, a[aria-expanded='true'] {
     transition: all ease 200ms;
+    color: #558aee;
+    border-left: 5px solid;
+    background: rgba(85, 138, 238, 0.05);
 }
 
-
-.list-group li.active>a:hover {
+.list-group li.active > a:hover {
     color: #4a79d0;
-    background: rgba(85, 138, 238, 0.15)
+    background: rgba(85, 138, 238, 0.15);
 }
 
 .dropdown-toggle::after {
-    display: block;
     position: absolute;
     top: 50%;
     right: 20px;
+    display: block;
     transform: translateY(-50%);
 }
 
@@ -254,55 +258,64 @@ background: rgba(181, 181, 181, 0.05);
 }
 
 .informacoes-conta {
-margin: 20px 0;
-
+    margin: 20px 0;
 }
+
+/* Aqui nós criamos uma classe e a usamos em todos os botões
+ para sobreescrever os nativos do Boostrap e dar mais personalidade ao sistema */
 
 .botao-sistema, .botao-sidebar {
-box-sizing: border-box;
-transition: all ease 200ms;
-color: white;
-background: #558aee;
-background: -moz-linear-gradient(-45deg, #7aa0e8 0%, #558aee 100%);
-background: -webkit-linear-gradient(-45deg, #7aa0e8 0%,#558aee 100%);
-background: linear-gradient(135deg, #7aa0e8 0%,#558aee 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa0e8', endColorstr='#558aee',GradientType=1 );
-box-shadow: 0 7px 15px rgba(85, 138, 238, 0.3);
+    box-sizing: border-box;
+    transition: all ease 200ms;
+    color: white;
+    background: #558aee;
+    background:    -moz-linear-gradient(-45deg, #7aa0e8 0%, #558aee 100%);
+    background: -webkit-linear-gradient(-45deg, #7aa0e8 0%,#558aee 100%);
+    background:         linear-gradient(135deg, #7aa0e8 0%,#558aee 100%);
+    box-shadow: 0 7px 15px rgba(85, 138, 238, 0.3);
+
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa0e8', endColorstr='#558aee',GradientType=1 );
 }
 
-.botao-sistema  {
-margin: 20px 0;
-padding: 10px 30px;
+.botao-sistema {
+    margin: 20px 0;
+    padding: 10px 30px;
 }
-.botao-sidebar  {
-width: 70%;
-margin: 10px 0;
-padding: 10px 30px;
+
+.botao-sidebar {
+    width: 70%;
+    margin: 10px 0;
+    padding: 10px 30px;
 }
 
 .botao-sidebar:hover, .botao-sidebar:focus, .botao-sistema:hover, .botao-sistema:focus {
-opacity: 0.9;
-box-shadow: 0 7px 15px rgba(85, 138, 238, 0.5)
+    opacity: 0.9;
+    box-shadow: 0 7px 15px rgba(85, 138, 238, 0.5);
 }
 
+section {
+    max-width: 80%;
+    margin: 5rem auto;
+}
 
 .thead-principal {
-      color: #fff;
-background: #558aee;
-background: -moz-linear-gradient(-45deg, #7aa0e8 0%, #558aee 100%);
-background: -webkit-linear-gradient(-45deg, #7aa0e8 0%,#558aee 100%);
-background: linear-gradient(135deg, #7aa0e8 0%,#558aee 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa0e8', endColorstr='#558aee',GradientType=1 );
+    color: #fff;
+    background: #558aee;
+    background:    -moz-linear-gradient(-45deg, #7aa0e8 0%, #558aee 100%);
+    background: -webkit-linear-gradient(-45deg, #7aa0e8 0%,#558aee 100%);
+    background:         linear-gradient(135deg, #7aa0e8 0%,#558aee 100%);
+
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aa0e8', endColorstr='#558aee',GradientType=1 );
 }
 
 section .table {
-    box-shadow: 0 12px 25px rgba(128, 114, 189, 0.2);
-    border-radius: 9px;
     overflow: hidden;
+    margin-top: 1.5em;
+    border-radius: 9px;
+    box-shadow: 0 12px 25px rgba(128, 114, 189, 0.2);
 }
-
 .table thead th {
-  padding: 20px;
+    padding: 20px;
 }
 
 .table td, .table th {
@@ -312,77 +325,81 @@ section .table {
 }
 
 .faltas {
-width: 100%;
-max-width: 500px;
+    width: 100%;
+    max-width: 500px;
 }
 
+/*----------------------- Novos botões de editar e excluir também para sobreescrever os do Boostrap ----------------------------*/
 
-
-/*----------------------- Novos botões de editar e excluir ----------------------------*/
- .editar-botao {
-     padding: 6px 1px;
-     background: #fff;
-     width: calc(50% - 4px);
-     max-width: 100px;
-     -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
-     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
-}
-.editar-botao:hover {
-    background: #578bed;
-    color: white;
-    width: calc(50% - 4px);
-}
-a.excluir-botao {
-    border: 1px solid #568bee;
-    background: #fff;
+.editar-botao {
     width: calc(50% - 4px);
     max-width: 100px;
-    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+    padding: 6px 1px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
- a.excluir-botao:hover, a.excluir-botao:focus {
-     outline: 0;
-     background: #568bee;
-     color: #fff;
+.editar-botao:hover {
+    width: calc(50% - 4px);
+    color: white;
+    background: #578bed;
 }
 
- a.editar-botao:hover, a.excluir-botao:hover {
-     -webkit-transition: all ease 200ms;
-     -o-transition: all ease 200ms;
-     transition: all ease 200ms;
-     -webkit-box-shadow: 0 5px 16px 0 rgba(0, 0, 0, .1);
-     box-shadow: 0 5px 16px 0 rgba(0, 0, 0, .1);
-
+a.excluir-botao {
+    width: calc(50% - 4px);
+    max-width: 100px;
+    border: 1px solid #568bee;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
-/*------ TransiÃ§Ãµes para as sombras de todos os botoes --------*/
- a.excluir-botao, .editar-botao {
-     -webkit-transition: all ease-out 200ms;
-     -o-transition: all ease-out 200ms;
-     transition: all ease-out 200ms;
+a.excluir-botao:hover, a.excluir-botao:focus {
+    color: #fff;
+    outline: 0;
+    background: #568bee;
 }
 
+a.editar-botao:hover, a.excluir-botao:hover {
+    -webkit-transition: all ease 200ms;
+         -o-transition: all ease 200ms;
+            transition: all ease 200ms;
+    -webkit-box-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.1);
+}
+
+/*------ Adicionamos transições suaves para as sombras de todos os botoes --------*/
+
+a.excluir-botao, .editar-botao {
+    -webkit-transition: all ease-out 200ms;
+         -o-transition: all ease-out 200ms;
+            transition: all ease-out 200ms;
+}
+
+/* Personalizamos o footer do site */
 
 .footer-site {
-  position: absolute;
-  bottom: 0;
-    background: #558aee;
-    width: 100%;
-    -webkit-box-shadow: inset 0 8px 15px -8px #000000;
-    -moz-box-shadow: inset 0 8px 15px -8px #000000;
-    box-shadow: inset 0 8px 15px -8px #00000038;
+    line-height: 45px;
+    position: absolute;
+    bottom: 0;
     display: block;
-    line-height: 45px;
+    width: 100%;
+    background: #558aee;
+    -webkit-box-shadow: inset 0 8px 15px -8px #000000;
+       -moz-box-shadow: inset 0 8px 15px -8px #000000;
+            box-shadow: inset 0 8px 15px -8px #00000038;
 }
+
 .footer-site a {
-  color: white;
-}
-.footer-left p {
     color: white;
+}
+
+.footer-left p {
     font-size: 14px;
-    margin: 0;
     line-height: 45px;
+    margin: 0;
+    color: white;
 }
 
 .visao-logo-footer img {
