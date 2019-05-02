@@ -9,7 +9,7 @@ class Database
     private $host = "54.94.154.192" ;
     private $db_name = "treinamento_trainee";
     private $username = "root";
-    private $password = "1234";
+    private $password = "";
 
     public $conn;
 
