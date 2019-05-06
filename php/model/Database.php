@@ -1,15 +1,11 @@
 <?php
-namespace VisaoJR\Treinee\Model;
-
-use \PDO;
-use \PDOException;
 
 class Database
 {
-    private $host = "54.94.154.192" ;
+    private $host = "visao-db-03.cft1idki1h3y.us-east-1.rds.amazonaws.com:8080" ;
     private $db_name = "treinamento_trainee";
-    private $username = "root";
-    private $password = "";
+    private $username = "visaojr";
+    private $password = "visaojr2415";
 
     public $conn;
 

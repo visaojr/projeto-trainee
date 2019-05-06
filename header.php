@@ -1,22 +1,8 @@
 <?php
-
-use VisaoJR\Treinee\model\Task;
-use VisaoJR\Treinee\model\Matter;
-
-require_once 'model/Matter.php';
-require_once 'model/Task.php';
-
-$tarefa = new Task();
-/*require_once '../autoloader.php';*/
-
-$materia = new Matter();
-$tarefa = new Task();
-
+session_start();
 ?>
 <!DOCTYPE HTML>
-
 <html lang="pt-br">
-
 <head>
 	<!-- Padronizações modernas para informar aos navegadores a codigicação e o tipo da página. Por exemplo, isso faz com que o browser não carregue a página como um PDF ou XML, e sim como um HTML. -->
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -50,7 +36,7 @@ $tarefa = new Task();
 				<img src="assets/images/perfil.jpg">
 			</div>
 			<div class="text-center my-3 sidebar-heading">Olá,
-				<br>Michael Jackson!
+				<br><?=$_SESSION['aluno']->name?> <?=$_SESSION['aluno']->surname?> 
 			</div>
 
 			<!-- Lista de itens do menu principal -->
@@ -69,14 +55,7 @@ $tarefa = new Task();
 				<li class="active">
 					<a href="#materias_submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-filter mr-4"></i></i>Tarefas por matéria</a>
 					<ul class="list-unstyled collapse" id="materias_submenu">
-						<?php
-						$stmtMateria = $materia->index();
-						while ($row = $stmtMateria->fetch(PDO::FETCH_OBJ)) {   
-							?>
-							<li>
-								<a href="#"><?php echo $row->name; ?></a>
-							</li>
-						<?php } ?>
+		
 					</ul>
 				</li>
 				<li>

@@ -1,0 +1,12 @@
+version: "3"
+services:
+  web:
+    build: .
+    image: php:7.2-apache
+    container_name: php_trainee
+    volumes: 
+      - ./:/var/www/html/
+    ports: 
+      - "3000:80"
+    stdin_open: true
+    tty: true

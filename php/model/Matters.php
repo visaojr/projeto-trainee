@@ -1,9 +1,4 @@
 <?php
- 
-namespace VisaoJR\SisOmega\Model;
-
-use \PDO;
-use \PDOException;
 
 require_once 'Database.php';
 
@@ -93,7 +88,14 @@ class Matters{
     }
 
     public function indexMatters($id){
-        $stmt = $this->conn->prepare("SELECT matters.id, matters.name FROM  matters INNER JOIN areas ON (areas.id = matters.areaS_id) WHERE areas.id = :id;");
+        $stmt = $this->conn->prepare("SELECT matter.id, matter.name, matter.workload, course.type, course.semester FROM matter, course_has_matter as course WHERE course.course_id = :id AND course.matter_id = matter.id;");
+        $stmt->bindValue(':id', $id);
+        $stmt->execute();
+        return $stmt;
+    }
+
+    public function gradeByMateria($id){
+        $stmt = $this->conn->prepare("SELECT * FROM course_has_matter WHERE course_id = :id");
         $stmt->bindValue(':id', $id);
         $stmt->execute();
         return $stmt;
