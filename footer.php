@@ -1,6 +1,3 @@
-
-
-
 <footer  class="footer-site px-5">
 	<div class="container-fluid">
 		<div class="row">
@@ -18,15 +15,7 @@
 	</div>
 </footer>
 
-
-
-
-
-
-
 <!-- /#page-content-wrapper -->
-
-
 
 </div>
 
@@ -42,6 +31,22 @@
 <script src='assets/fullcalendar/fullcalendar.min.js'></script>
 <script src='locale/pt-br.js'></script>
 <script>
+
+	const dados = <?php echo(json_encode($tasks))?>;
+	console.log(dados);
+	var eventos = [];
+
+	[...dados].forEach(dado => {
+		eventos.push({
+			id : dado.id,
+			start: dado.date,
+			backgroundColor: dado.color,
+			title: dado.name
+		})
+	});
+
+	console.log(eventos);
+
 	$(document).ready(function() {
 		$('#calendar').fullCalendar({
 			header: {
@@ -49,24 +54,11 @@
 				center: 'title',
 				right: 'month,agendaWeek,agendaDay,listWeek'
 			},
-			defaultDate: '2017-10-12',
+			defaultDate: new Date(),
 			navLinks: true, // can click day/week names to navigate views
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
-			events: [	
-				<?php
-					$stmtTarefa = $tarefa->index();
-			       	while ($row = $stmtTarefa->fetch(PDO::FETCH_OBJ)) { 
-			        	?>
-			        	{
-			        	id: '<?php echo $row->id; ?>',
-			        	title: '<?php echo $row->name; ?>',
-			        	start: '<?php echo $row->date; ?>',
-			        	color: '<?php echo $row->color; ?>',
-			        	},<?php 
-			        } 
-			    ?>
-				]			
+			events: eventos,			
 		});
 		
 	});

@@ -1,5 +1,9 @@
 <?php
 session_start();
+require_once 'php/model/Matters.php';
+require_once 'php/model/Task.php';
+$matters = new Matters();
+$studentsMatters = $matters->getStudentsActiveMatters($_SESSION['matricula'])->fetchAll(PDO::FETCH_OBJ);
 ?>
 <!DOCTYPE HTML>
 <html lang="pt-br">
@@ -45,17 +49,19 @@ session_start();
 					<a href="index.php"><i class="far fa-calendar mr-4"></i>Meu Calendário</a>
 				</li>
 				<li>
-					<a href="todas-as-tarefas.php"><i class="fas fa-tasks mr-4"></i>Todas as tarefas</a>
-				</li>
-				<li>
-					<a href="tarefas-por-materia.php"><i class="fas fa-filter mr-4"></i>TAREFAS (PROVISÓRIO)</a>
+					<a href="todas-as-tarefas.php"><i class="fas fa-tasks mr-4"></i>Todas as matérias</a>
 				</li>
 				<!-- Ítem do menu que usa PHP para buscar as materias do banco de dados e popular as opções -->
 
-				<li class="active">
-					<a href="#materias_submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-filter mr-4"></i></i>Tarefas por matéria</a>
+				<li class="">
+					<a href="#materias_submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-graduation-cap mr-4"></i></i>Minhas Matérias</a>
+					
 					<ul class="list-unstyled collapse" id="materias_submenu">
-		
+					<?php foreach($studentsMatters as $materiaAtiva) { ?>
+						<li>
+							<a href="materia.php?id=<?=$materiaAtiva->matter_id?>"><?=$materiaAtiva->name?></a>
+						</li>
+					<?php } ?>
 					</ul>
 				</li>
 				<li>

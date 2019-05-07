@@ -76,16 +76,16 @@ require_once 'header.php';
 		<div class="form-group">
 			<label for="exampleSelect1">Selecione a quantidade de faltas que você possuí na matéria</label>
 			<select class="form-control" id="exampleSelect1">
-				<option>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-				<option>5</option>
-				<option>6</option>
-				<option>7</option>
-				<option>8</option>
-				<option>9</option>
-				<option>Mais do que 9</option>
+				<option value="1"1</option>
+				<option value="2"2</option>
+				<option value="3"3</option>
+				<option value="4"4</option>
+				<option value="5"5</option>
+				<option value="6"6</option>
+				<option value="7"7</option>
+				<option value="8"8</option>
+				<option value="9"9</option>
+				<option value="10"Mais do que 9</option>
 			</select>
 
 			<button class="btn botao-sistema" href="#">Salvar</button>

@@ -1,9 +1,4 @@
 <?php
- 
-namespace VisaoJR\Treinee\Model;
-
-use \PDO;
-use \PDOException;
 
 require_once 'Database.php';
 
@@ -55,7 +50,7 @@ class Task{
 
     public function insert(){
         try{
-            $stmt = $this->conn->prepare("INSERT INTO `task` VALUES (:type, :name, :total, :nota, :date, :color, :student_registration, :matter_id)");
+        $stmt = $this->conn->prepare("INSERT INTO `task` VALUES (:type, :name, :total, :nota, :date, :color, :student_registration, :matter_id)");
         $stmt->bindParam(":type", $this->type);
         $stmt->bindParam(":name", $this->name);
         $stmt->bindParam(":total", $this->total);
@@ -98,8 +93,17 @@ class Task{
             echo $e->getMessage();
         }
     }
-    public function index(){
-        $stmt = $this->conn->prepare("SELECT * FROM `task` WHERE 1");
+    public function index($reg, $id){
+        $stmt = $this->conn->prepare("SELECT * FROM `task` WHERE student_registration = :reg AND matter_id = :id");
+        $stmt->bindParam(":reg", $reg);
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        return $stmt;
+    }
+
+    public function getAllByAluno($reg){
+        $stmt = $this->conn->prepare("SELECT * FROM `task` WHERE student_registration = :reg");
+        $stmt->bindParam(":reg", $reg);
         $stmt->execute();
         return $stmt;
     }

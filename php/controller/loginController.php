@@ -12,13 +12,13 @@ if(isset($_POST['login'])){
     $login->setPass(sha1($pass));
 
     $dados = $login->verifyLogin()->fetch(PDO::FETCH_OBJ);
-    var_dump($dados);
+
     if($dados){
         $_SESSION['matricula'] = $dados->registration;
         $_SESSION['email'] = $dados->email;
         $_SESSION['aluno'] = $dados;
     }else{
-        echo "oi";
+        $result =  "Acesso Inválido";
     }
 
 }

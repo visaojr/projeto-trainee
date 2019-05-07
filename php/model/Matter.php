@@ -1,10 +1,5 @@
 <?php
  
-namespace VisaoJR\Treinee\Model;
-
-use \PDO;
-use \PDOException;
-
 require_once 'Database.php';
 
 class Matter{
@@ -66,8 +61,9 @@ class Matter{
             return 0;
         }
     }
-    public function index(){
-        $stmt = $this->conn->prepare("SELECT * FROM `matter` WHERE 1");
+    public function indexById($id){
+        $stmt = $this->conn->prepare("SELECT * FROM `matter` WHERE id = :id;");
+        $stmt->bindParam(":id", $id);
         $stmt->execute();
         return $stmt;
     }
