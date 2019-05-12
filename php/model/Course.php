@@ -1,9 +1,4 @@
 <?php
- 
-namespace VisaoJR\Treinee\Model;
-
-use \PDO;
-use \PDOException;
 
 require_once 'Database.php';
 
@@ -47,11 +42,13 @@ class Course{
             $stmt = $this->conn->prepare("DELETE FROM `course` WHERE `id` == :id");
             $stmt->execute();
             return 1;
-        catch(PDOException $e){
+        
+        }catch(PDOException $e){
             echo $e->getMessage();
             return 0;
         }
     }
+
 
     public function edit(){
         try{
@@ -70,6 +67,7 @@ class Course{
     public function index(){
         $stmt = $this->conn->prepare("SELECT * FROM `course` WHERE 1 ORDER BY `name`");
         $stmt->execute();
+        return $stmt;
     }
     
 
