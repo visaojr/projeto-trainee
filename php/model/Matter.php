@@ -61,9 +61,16 @@ class Matter{
             return 0;
         }
     }
+    
     public function indexById($id){
         $stmt = $this->conn->prepare("SELECT * FROM `matter` WHERE id = :id;");
         $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        return $stmt;
+    }
+
+    public function viewMatter(){
+        $stmt = $this->conn->prepare("SELECT * FROM `matter` as m, `student_attend_matter` as sm where sm.matter_id = m.id;");
         $stmt->execute();
         return $stmt;
     }

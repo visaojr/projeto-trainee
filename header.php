@@ -1,9 +1,16 @@
 <?php
 session_start();
+
 require_once 'php/model/Matters.php';
 require_once 'php/model/Task.php';
+require_once 'php/model/Students.php';
+
 $matters = new Matters();
-$studentsMatters = $matters->getStudentsActiveMatters($_SESSION['matricula'])->fetchAll(PDO::FETCH_OBJ);
+$tarefa = new Task();
+$student = new Students();
+
+
+/*$studentsMatters = $matters->getStudentsActiveMatters($_SESSION['matricula'])->fetchAll(PDO::FETCH_OBJ);*/
 ?>
 <!DOCTYPE HTML>
 <html lang="pt-br">
@@ -39,8 +46,8 @@ $studentsMatters = $matters->getStudentsActiveMatters($_SESSION['matricula'])->f
 			<div class="mx-auto mt-5 imagem-perfil">
 				<img src="assets/images/perfil.jpg">
 			</div>
-			<div class="text-center my-3 sidebar-heading">Olá,
-				<br><?=$_SESSION['aluno']->name?> <?=$_SESSION['aluno']->surname?> 
+			<div class="text-center my-3 sidebar-heading">Olá, Vinicius
+				<br><!-- <?=$_SESSION['aluno']->name?> <?=$_SESSION['aluno']->surname?>  -->
 			</div>
 
 			<!-- Lista de itens do menu principal -->

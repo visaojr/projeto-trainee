@@ -1,10 +1,5 @@
 <?php
  
-namespace VisaoJR\Treinee\Model;
-
-use \PDO;
-use \PDOException;
-
 require_once 'Database.php';
 
 class Students{
@@ -93,6 +88,12 @@ class Students{
 
     public function index(){
         $stmt = $this->conn->prepare("SELECT * FROM `student` WHERE 1");
+        $stmt->execute();
+        return $stmt;
+    }
+
+    public function view(){
+        $stmt = $this->conn->prepare("SELECT * FROM `student` AS s, `student_attend_matter` AS sm WHERE sm.student_registration = s.registration");
         $stmt->execute();
         return $stmt;
     }

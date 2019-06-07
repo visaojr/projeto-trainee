@@ -50,27 +50,29 @@ class Task{
 
     public function insert(){
         try{
-        $stmt = $this->conn->prepare("INSERT INTO `task` VALUES (:type, :name, :total, :nota, :date, :color, :student_registration, :matter_id)");
+        $stmt = $this->conn->prepare("INSERT INTO `task` (`type`, `name`, `total`, `nota`, `date`, `color`, `student_registration`, `matter_id`)VALUES(:type, :name, :total, :nota, :date, :color, :student_registration, :matter_id)");
         $stmt->bindParam(":type", $this->type);
         $stmt->bindParam(":name", $this->name);
         $stmt->bindParam(":total", $this->total);
         $stmt->bindParam(":nota", $this->date);
+        $stmt->bindParam(":date", $this->date);
         $stmt->bindParam(":color", $this->color);
         $stmt->bindParam(":student_registration", $this->student_registration);
         $stmt->bindParam(":matter_id", $this->matter_id);
         $stmt->execute();
         return 1;    
         }catch(PDOException $e){
-            echo $e->getMessage();
+            echo 'Error: '.$e->getMessage();
             return 0;
         }
     }
 
     public function delete($id){
         try{
-            $stmt = $this->conn->prepare("DELETE FROM `task` WHERE `id` == :id");
-            $stmt->bindParam(":id", $this->id);
-            $stmt->prepare();    
+            $stmt = $this->conn->prepare("DELETE FROM `task` WHERE `id` = :id");
+            $stmt->bindParam(":id", $id);
+            $stmt->execute();
+            return 1;    
         }catch(PDOException $e){
             echo $e->getMessage();
             return 0;
@@ -79,12 +81,13 @@ class Task{
 
     public function edit(){
         try{    
-            $stmt = $this->conn->prepare("UPDATE `task` SET `type` = :type, `name` == :name, `total` == :total, `nota` == :nota, `date` == :date, `color` == :color, `student_registration` == :student_registration, `matter_id` ==:matter_id WHERE `id` == :id ");
+            $stmt = $this->conn->prepare("UPDATE `task` SET `type` = :type, `name` = :name, `total` = :total, `nota` = :nota, `date` = :date, `color` = :color, `student_registration` = :student_registration, `matter_id` =:matter_id WHERE `id` = :id ");
             $stmt->bindParam(":id", $this->id);
             $stmt->bindParam(":type", $this->type);
             $stmt->bindParam(":name", $this->name);
             $stmt->bindParam(":total", $this->total);
-            $stmt->bindParam(":nota", $this->date);
+            $stmt->bindParam(":nota", $this->nota);
+            $stmt->bindParam(":date", $this->date);
             $stmt->bindParam(":color", $this->color);
             $stmt->bindParam(":student_registration", $this->student_registration);
             $stmt->bindParam(":matter_id", $this->matter_id);
@@ -93,6 +96,13 @@ class Task{
             echo $e->getMessage();
         }
     }
+   
+    public function view(){
+        $stmt = $this->conn->prepare("SELECT * FROM `task` WHERE 1");
+        $stmt->execute();
+        return $stmt;
+    }
+
     public function index($reg, $id){
         $stmt = $this->conn->prepare("SELECT * FROM `task` WHERE student_registration = :reg AND matter_id = :id");
         $stmt->bindParam(":reg", $reg);

@@ -62,7 +62,7 @@ require_once 'php/controller/loginController.php';
 				</form>
 			</div>
 			<div class="card-footer">
-				<?=$result?>
+				<?php $result; ?>
 			</div>
 		</div>
 	</div>

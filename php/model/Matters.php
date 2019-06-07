@@ -101,6 +101,12 @@ class Matters{
         return $stmt;
     }
 
+     public function viewMatter(){
+        $stmt = $this->conn->prepare("SELECT * FROM `matter` as m, `student_attend_matter` as sm where sm.matter_id = m.id;");
+        $stmt->execute();
+        return $stmt;
+    }
+
     public function getStudentsActiveMatters($student_register){
         $stmt = $this->conn->prepare("SELECT * FROM student_attend_matter, matter WHERE student_attend_matter.student_registration = :id AND student_attend_matter.status = 1 AND matter.id = student_attend_matter.matter_id;");
         $stmt->bindValue(':id', $student_register);

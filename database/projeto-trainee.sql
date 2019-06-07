@@ -123,12 +123,9 @@ CREATE TABLE IF NOT EXISTS `treinamento_trainee`.`task` (
   `matter_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id`, `student_registration`, `matter_id`),
   INDEX `fk_tasks_students_attend_matters1_idx` (`student_registration` ASC, `matter_id` ASC) ,
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
   CONSTRAINT `fk_tasks_students_attend_matters1`
     FOREIGN KEY (`student_registration` , `matter_id`)
-    REFERENCES `treinamento_trainee`.`student_attend_matter` (`student_registration` , `matter_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    REFERENCES `treinamento_trainee`.`student_attend_matter` (`student_registration` , `matter_id`))
 ENGINE = InnoDB;
 
 

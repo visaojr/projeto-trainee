@@ -1,11 +1,15 @@
 <?php
 
+
 class Database
 {
     private $host = "localhost";
+    /*"visao-db-03.cft1idki1h3y.us-east-1.rds.amazonaws.com:8080"*/
     private $db_name = "treinamento_trainee";
     private $username = "root";
+    /*"visaojr"*/
     private $password = "";
+    /*"visaojr2415"*/
 
     public $conn;
 

@@ -58,7 +58,20 @@
 			navLinks: true, // can click day/week names to navigate views
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
-			events: eventos,			
+			events: [	
+				<?php
+					$stmtTarefa = $tarefa->view();
+			       	while ($row = $stmtTarefa->fetch(PDO::FETCH_OBJ)) { 
+			        	?>
+			        	{
+			        	id: '<?php echo $row->id; ?>',
+			        	title: '<?php echo $row->name; ?>',
+			        	start: '<?php echo $row->date; ?>',
+			        	color: '<?php echo $row->color; ?>',
+			        	},<?php 
+			        } 
+			    ?>
+				]	/*eventos,*/			
 		});
 		
 	});
